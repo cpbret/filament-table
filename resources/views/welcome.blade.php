@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    Test
+    Welcome {{ auth()->user()->name }}
 @endsection

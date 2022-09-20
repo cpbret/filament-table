@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/login', function () {
+    $user = \App\Models\User::find(23525);
+    \Illuminate\Support\Facades\Auth::login($user);
     return view('welcome');
 });
+
+Route::get('/', \App\Filament\Pages\ListUserPage::class)->name('settings-users.index');
